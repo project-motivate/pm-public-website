@@ -24,6 +24,22 @@ const plugins = BUILD
 
 plugins.push(new ExtractTextPlugin('style.css'));
 
+const cssLoader = BUILD
+? ExtractTextPlugin.extract({
+    use: [
+      { laoder: 'style-loader' },
+      { loader: 'css-loader', options: { minimize: true, localIdentName: `[hash:base64:10]` } },
+      { loader: 'postcss-loader' },
+      { loader: 'sass-loader' }
+    ]
+})
+: [
+  { loader: 'style-loader' },
+  { loader: 'css-loader', options: { minimize: true, localIdentName: `[hash:base64:10]` } },
+  { loader: 'postcss-loader' },
+  { loader: 'sass-loader' }
+];
+
 module.exports = { entry, output, plugins,
   module: {
     rules: [
@@ -33,9 +49,9 @@ module.exports = { entry, output, plugins,
         use: ['babel-loader']
       },
       {
-        test: /.css$/,
+        test: /.(css|scss)$/,
         exclude: /node_modules/,
-        use: ExtractTextPlugin.extract({ loader: 'css-loader', options: { minimize: true, localIdentName: `[hash:base64:10]` } })
+        use: cssLoader
       },
       {
         test: /.(jpg|png|gif)$/,

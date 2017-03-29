@@ -1,5 +1,5 @@
 const person = require('./src/app');
-const style = require('./src/styles/main.css');
+const style = require('./src/styles/main.scss');
 
 import Logo from './src/Logo';
 
