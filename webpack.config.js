@@ -58,6 +58,13 @@ module.exports = { entry, output, plugins,
         use: [
           { loader: 'url-loader', options: { limit: 10000, name: 'images/[hash:12][name].[ext]' } }
         ]
+      },
+      {
+        test: /.(eot|svg|otf|ttf|woff|woff2)/,
+        exclude: /node_modules/,
+        use: [
+          { loader: 'file-loader', options: { name: 'public/fonts/[name].[ext]' } }
+        ]
       }
     ]
   }
