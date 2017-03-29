@@ -63,7 +63,7 @@ module.exports = { entry, output, plugins,
         test: /.(eot|svg|otf|ttf|woff|woff2)/,
         exclude: /node_modules/,
         use: [
-          { loader: 'file-loader', options: { name: 'public/fonts/[name].[ext]' } }
+          { loader: 'file-loader'}
         ]
       }
     ]

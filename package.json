@@ -10,7 +10,7 @@
   "scripts": {
     "build": "NODE_ENV=production webpack",
     "dev": "NODE_ENV=development node dev-server.js",
-    "start": "NODE_ENV=production nodemon server/server.js",
+    "start": "NODE_ENV=production webpack -w --hot & nodemon server/server.js",
     "test": "mocha --timeout 8000"
   },
   "author": "Jimmy Huynh",
