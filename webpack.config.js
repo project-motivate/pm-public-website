@@ -27,7 +27,6 @@ plugins.push(new ExtractTextPlugin('style.css'));
 const cssLoader = BUILD
 ? ExtractTextPlugin.extract({
     use: [
-      { laoder: 'style-loader' },
       { loader: 'css-loader', options: { minimize: true, localIdentName: `[hash:base64:10]` } },
       { loader: 'postcss-loader' },
       { loader: 'sass-loader' }
