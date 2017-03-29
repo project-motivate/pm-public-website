@@ -34,7 +34,7 @@ const cssLoader = BUILD
 })
 : [
   { loader: 'style-loader' },
-  { loader: 'css-loader', options: { minimize: true, localIdentName: `[hash:base64:10]` } },
+  { loader: 'css-loader', options: { minimize: true, localIdentName: `[path][name]---[local]` } },
   { loader: 'postcss-loader' },
   { loader: 'sass-loader' }
 ];
