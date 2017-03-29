@@ -7,7 +7,7 @@ const compiler = webpack(config);
 
 const server = new WebpackDevServer(compiler, {
   hot: true,
-  contentBase: path.join(__dirname, 'public'),
+  // contentBase: path.join(__dirname, 'public'),
   filename: config.output.filename,
   publicPath: config.output.publicPath,
   stats: {
